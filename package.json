@@ -1,8 +1,8 @@
 {
-  "name": "learn-cdk-workshop",
+  "name": "cdk-workshop",
   "version": "0.1.0",
   "bin": {
-    "learn-cdk-workshop": "bin/learn-cdk-workshop.js"
+    "cdk-workshop": "bin/cdk-workshop.js"
   },
   "scripts": {
     "build": "tsc",
