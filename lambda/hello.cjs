@@ -1,5 +1,6 @@
 // @ts-check
 /**
+ * あいさつを返すやつ
  * @param {import("aws-lambda").APIGatewayProxyEvent} event
  * @returns {Promise<import("aws-lambda").APIGatewayProxyResult>}
  */

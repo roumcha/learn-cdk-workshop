@@ -6,15 +6,15 @@ const {
 const { LambdaClient, InvokeCommand } = require("@aws-sdk/client-lambda");
 
 /**
+ * パスごとのアクセス数を数えつつ、あいさつの Lambda 関数を呼び出すやつ
  * @param {import("aws-lambda").APIGatewayProxyEvent} event
  * @returns {Promise<import("aws-lambda").APIGatewayProxyResult>}
  */
 exports.handler = async function (event) {
   console.log("request: ", JSON.stringify(event));
 
+  // DynamoDB にアクセスを記録
   const dynamo = new DynamoDBClient();
-  const lambda = new LambdaClient();
-
   await dynamo.send(
     new UpdateItemCommand({
       TableName: process.env.HITS_TABLE_NAME,
@@ -23,6 +23,9 @@ exports.handler = async function (event) {
       ExpressionAttributeValues: { ":incr": { N: "1" } },
     })
   );
+
+  // あいさつの Lambda 関数を呼び出す
+  const lambda = new LambdaClient();
 
   const resp = await lambda.send(
     new InvokeCommand({
