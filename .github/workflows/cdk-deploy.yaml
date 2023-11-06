@@ -13,8 +13,24 @@ jobs:
     environment: { name: production }
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
+
       - run: npm i -g pnpm
+
       - run: pnpm i
+
+      - run: pnpm cdk diff
+        env:
+          AWS_DEFAULT_REGION: ap-northeast-1
+          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - run: pnpm test
+
       - run: pnpm cdk deploy --require-approval never
+        env:
+          AWS_DEFAULT_REGION: ap-northeast-1
+          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

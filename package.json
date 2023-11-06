@@ -8,8 +8,7 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk",
-    "format": "prettier"
+    "cdk": "cdk"
   },
   "devDependencies": {
     "@aws-sdk/client-dynamodb": "^3.441.0",
