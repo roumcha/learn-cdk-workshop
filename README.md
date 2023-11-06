@@ -30,7 +30,7 @@ pnpm でやってみたが、CDK の動作に特に問題なし。
 - `cdk init` すると勝手に `npm install` をおっぱじめる
   → pnpm を使いたい場合はまず `cdk init --generate-only ...` とする。
 - AWS CodeBuild 上で pnpm を動かすのは若干面倒
-  → CodeBuild はやめて、GitHub Actions にすればいい。ビルドも速い。
+  → CodeBuild はやめて、GitHub Actions にすればいい。
 
 ## コマンド
 
