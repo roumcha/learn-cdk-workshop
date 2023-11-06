@@ -1,0 +1,23 @@
+name: cdk-synth
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  cdk-synth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install
+        run: |
+          npm i -g pnpm
+          pnpm i
+
+      - name: Synth
+        run: pnpm dlx cdk synth
