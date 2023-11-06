@@ -16,5 +16,5 @@ jobs:
           git config user.name "actions-user"
           git config user.email "action@github.com"
           git add .
-          git commit -m "fix format"
+          git commit -m "fix format" || true
           git push
