@@ -1,14 +1,10 @@
 name: CDK Deploy
 
 on:
-  pull_request:
-    branches: [release]
-    types: [closed]
   workflow_dispatch:
 
 jobs:
   deploy:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     environment: { name: production }
     steps:
