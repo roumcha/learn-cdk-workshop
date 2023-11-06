@@ -1,0 +1,20 @@
+name: Format
+
+on:
+  workflow_dispatch:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npx prettier -w .
+      - name: Git Push
+        run: |
+          git config user.name "actions-user"
+          git config user.email "action@github.com"
+          git add .
+          git commit -m "fix format"
+          git push

@@ -1,0 +1,21 @@
+name: CDK DESTROY
+
+on:
+  workflow_dispatch:
+    inputs:
+      type-destroy:
+        description: Please type "DESTROY"
+        required: true
+
+jobs:
+  cdk-synth:
+    if: "${{ github.event.inputs.type-destroy == 'DESTROY' }}"
+    runs-on: ubuntu-latest
+    environment: { name: production }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20.x }
+      - run: npm i -g pnpm
+      - run: pnpm i
+      - run: pnpm cdk destroy --force
