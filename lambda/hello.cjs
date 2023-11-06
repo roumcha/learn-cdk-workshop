@@ -1,3 +1,8 @@
+// @ts-check
+/**
+ * @param {import("aws-lambda").APIGatewayProxyEvent} event
+ * @returns {Promise<import("aws-lambda").APIGatewayProxyResult>}
+ */
 exports.handler = async function (event) {
   console.log("request:", JSON.stringify(event, undefined, 2));
   return {
