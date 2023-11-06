@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  cdk-synth:
+  destroy:
     runs-on: ubuntu-latest
     environment: { name: production }
     steps:
