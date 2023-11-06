@@ -8,6 +8,9 @@ dependencies:
   aws-cdk-lib:
     specifier: 2.104.0
     version: 2.104.0(constructs@10.3.0)
+  cdk-dynamo-table-viewer:
+    specifier: ^0.2.487
+    version: 0.2.487(aws-cdk-lib@2.104.0)(constructs@10.3.0)
   constructs:
     specifier: ^10.0.0
     version: 10.3.0
@@ -1939,6 +1942,17 @@ packages:
   /caniuse-lite@1.0.30001561:
     resolution: {integrity: sha512-NTt0DNoKe958Q0BE0j0c1V9jbUzhBxHIEJy7asmGrpE0yG63KTV7PLHPnK2E1O9RsQrQ081I3NLuXGS6zht3cw==}
     dev: true
+
+  /cdk-dynamo-table-viewer@0.2.487(aws-cdk-lib@2.104.0)(constructs@10.3.0):
+    resolution: {integrity: sha512-sJH+SaiadcVzR+ov6WqIQHzQg8kyzXIFBBOKXLpmenfOIEb7tOZlRHgIW6fiYjYP65WR1ICspUa7y10zckHF5g==}
+    engines: {node: '>= 16.14.0'}
+    peerDependencies:
+      aws-cdk-lib: ^2.60.0
+      constructs: ^10.0.5
+    dependencies:
+      aws-cdk-lib: 2.104.0(constructs@10.3.0)
+      constructs: 10.3.0
+    dev: false
 
   /chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
