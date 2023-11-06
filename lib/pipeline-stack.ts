@@ -6,7 +6,7 @@ export class WorkshopPipelineStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    new codecommit.Repository(this, "WorksopRepo", {
+    new codecommit.Repository(this, "WorkshopCodeCommitRepo", {
       repositoryName: "WorkshopRepo",
     });
   }
